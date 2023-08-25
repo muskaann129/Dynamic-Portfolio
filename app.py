@@ -62,7 +62,8 @@ def admin():
     w.close()
     return redirect(f"/{username}")    
 
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
 
 # Removing data after shutting server
 filename = "data.txt"
