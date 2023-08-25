@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>{{data.name}} Portfolio</title>
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    scroll-behavior: smooth;
+}
+
+/* Styling scroll bar */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background:#1f658b;
+}
+
+::-webkit-scrollbar-thumb {
+    background:#5aa5ce;
+}
+
+/* Introduction page */
+
+.home{
+    min-height: 100vh;
+    width: 100%;
+    background: #022C43;
+    display: flex;
+}
+
+.sidebar{
+    background-color: #115173;
+    height: 100vh;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+.sidebar a,h4{
+    font-size: 20px;
+    padding: 16px 0px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.sidebar .dot{
+    height: 4px;
+    width: 4px;
+    background: #dddddd;
+    border-radius: 50%;
+}
+
+.intro{
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 220px;
+    color: rgb(241, 241, 241);
+}
+
+.typewriter h1 {
+    font-size: 60px;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation:  
+    typing infinite 4s steps(40, end) ,
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+
+@keyframes typing {
+    0%{
+        width: 0px;
+    }
+    50%,100%{
+        width: 100%;
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: yellow; }
+}
+
+.intro .img img{
+    height: 11em;
+    width: 13em;
+    margin: 30px 0px 10px 0px;
+    border-radius: 50%;
+}
+
+.intro p{
+    margin: 40px 0px;
+    font-weight: bold;
+}
+
+.intro h4{
+    cursor: auto;
+    float: left;
+}
+
+.intro a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+#buttone1 {
+    padding: 16px 33px 16px 33px;
+    border-radius: 40px;
+    background: #FFD700;
+    border: none;
+    font-family: inherit;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+    font-size: 16px;
+}
+   
+#buttone1:hover {
+    box-shadow: 7px 5px 56px -14px #FFD700;
+}
+
+#buttone1:active {
+    transform: scale(0.97);
+    box-shadow: 7px 5px 56px -10px #FFD700;
+}
+
+
+/* About page */
+.about{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    width: 100%;
+    background-color: #053F5E;
+}
+
+.about .box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 50vh;
+    width: 70vw;
+    background: #ffffff2b;
+    border-radius: 30px;
+    /* border: 2px solid yellow; */
+}
+
+.box h1{
+    margin-top: -20px;
+    font-size: 50px;
+    color: rgb(237, 237, 237);
+}
+
+.box p{
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 25px;
+    margin: 0px 50px;
+    color: rgb(227, 227, 227);
+}
+
+/* Skills */
+
+.skills{
+    padding: 20px 20px;
+    background:#022C43;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.skills h1{
+    font-size: 60px;
+    color:#FFD700;
+    margin: 20px 0px;
+}
+
+.card {
+    width: 80%;
+    height: 80vh;
+    background:#022C43;
+    display: flex;
+    gap: 10px;
+    padding: .4em;
+}
+
+.card p {
+    height: 100%;
+    flex: 1;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 2px;
+    font-size: 26px;
+    font-weight: bold;
+    transition: all .5s;
+    background: #022C43;
+    border: 2px solid #FFD700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card p:hover {
+    flex: 2;
+}
+
+.card p span {
+    min-width: 14em;
+    padding: .5em;
+    text-align: center;
+    transform: rotate(-90deg);
+    transition: all .5s;
+    text-transform: uppercase;
+    color: #FFD700;
+    letter-spacing: .1em;
+}
+
+.card p:hover span {
+    transform: rotate(0);
+}
+
+
+/* Footer */
+
+.contact {
+    display: flex;
+    align-items: center ;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background:#115173;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    height: 30vh;
+    width: 100%;
+}
+
+.contact p{
+    padding: 0px 40px;
+}
+
+.fa-brands{
+    padding: 0px 10px;
+    font-size: 30px;
+    color: white;
+}
+
+footer{
+        text-align: center;
+        height: 30px;
+        padding-top: 8px;
+        background-color: #022C43;
+    }
+    footer p{
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+    }
+    footer p a{
+        color: yellow;
+        text-decoration: none;
+    }
+</style>
+<body>
+    <section class="home">
+        <div class="sidebar">
+            <h4><a href="#about">About</a></h4>
+            <div class="dot"></div>
+            <h4><a href="#skills">Skills</a></h4>
+            <div class="dot"></div>
+            <h4><a href="#contact">Contact</a></h4>
+        </div>
+        <div class="intro">
+            <div class="typewriter">
+                <h1>Hey! I'm <span style="color:yellow;">{{data.name}}</span></h1>
+            </div>
+            <div class="img"><img src='{{ data.image }}'/></div>
+            <h4>College - <span style="color:yellow;">{{data.college}}</span></h4>
+            <h4>Email - <span style="color:yellow;">{{data.email}}</span></h4>
+            <h4>Experience - <span style="color:yellow;">{{data.expe}}</span></h4>
+            <p>Welcome to my portfolio,  I hope my portfolio will provide you <br> with insight into my skills and potential as I begin my journey in this industry.</p>
+        </div>
+    </section>
+
+
+    <section class="about" id="about">
+        <div class="box">
+            <h1> < About Me/> </h1>
+            <p>{{data.about}}</p>
+        </div>
+    </section>
+
+
+    <section class="skills" id="skills">
+        <h1>Skills</h1>
+        <div class="card">
+            <p><span>{{ data.skill[0] }}</span></p>
+            <p><span>{{ data.skill[1] }}</span></p>
+            <p><span>{{ data.skill[2] }}</span></p>
+            <p><span>{{ data.skill[3] }}</span></p>
+            <p><span>{{ data.skill[4] }}</span></p>
+        </div>
+    </section>
+
+
+    <section class="contact" id="contact">
+        <p>Thank you for visiting my portfolio! If you have any feedback, comments or questions, feel free to contact me. I appreciate all inputs and look forward to hearing from you.</p>
+        <div class="icons">
+            <a href={{ data.linkedin}} target="blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href={{ data.github}} target="blank"><i class="fa-brands fa-github"></i></a>
+            <a href={{ data.instagram}} target="blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href={{ data.twitter}} target="blank"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+    </section>
+    
+    <footer>
+        <p>Made with ❤️ by<span> <a href="https://github.com/muskaann129" target="_blank">Muskan Gyanani</a></span></p>
+    </footer>
+</body>
+</html>
