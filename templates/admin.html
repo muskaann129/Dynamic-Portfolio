@@ -21,15 +21,18 @@
         font-family: 'Black Ops One', cursive;
         color: #3e3e3e;
         font-size: 40px;
+        text-align: center;
         font-weight: bold;
         margin-bottom: 10px;
     }
     .main{
+        height: 100%; 
         margin-top: 10px;
         display: grid;
+        /* background-color: red; */
         place-items: center;
     }
-    form,.form,input,label,textarea,p,a,select,option,h2{
+    form,.form,input,label,textarea,p,a,select,option,h2,.inputs{
         background-color: #fff;
     }
     textarea{
@@ -39,9 +42,11 @@
         font-size: 12px;
     }
     .form{
-        /* border-radius: 10px; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
         margin-bottom: 30px;
-        /* border: 1px solid #3e3e3e; */
         box-shadow:
         0 0 0 2px rgb(255, 255, 255),
         0.3em 0.3em 1em rgba(0, 0, 0, 0.3);   
@@ -49,7 +54,6 @@
         padding:0 20px 20px 20px;
     }
     input{
-        /* background-color: #fff; */
         border: 1px solid black;
         width: 250px;
         outline: none;
@@ -61,7 +65,7 @@
         margin-top: 5px;
     }
     button{
-        margin-left: 200px;
+        width: 100%;
         padding: 10px 20px;
         font-size: 18px;
         background-color: #3e3e3e;
@@ -95,6 +99,42 @@
         color: yellow;
         text-decoration: none;
     }
+
+    /* resopnsive */
+
+    @media only screen and (max-width: 320px) {
+        .main {
+            width: 163%;
+        }
+        footer{
+            width: 163%;
+        }
+    }
+
+    @media only screen and (max-width: 1020px) {
+        .form{
+            width: 60%;
+        }
+    }
+    @media only screen and (max-width: 700px) {
+        textarea[cols]{
+            width: 250px;
+        }
+        .form{
+            width: 90%;
+        }
+    }
+    
+    @media only screen and (max-width: 426px) {
+        h1{
+            font-size: 30px;
+        }
+        input,textarea[cols]{
+            width: 270px;
+        }
+    }
+
+
 </style>
 
 <body>
@@ -102,69 +142,75 @@
         <h1>Welcome to the Dynamic Portfolio</h1>
         <div class="form">
             <h2>Enter your information</h2>
-            <form action="/portfolio" method="post">
-                <label for="username">Enter Username: </label>
-                <br>
-                <input type="text" name="uname">
-                <br>
-                <label for="name">Enter Full Name: </label>
-                <br>
-                <input type="text" name="name" id="">
-                <br>
-                <label for="email">Enter Email: </label>
-                <br>
-                <input type="email" name="email">
-                <br>
-                <label for="college">Enter College name:</label>
-                <br>
-                <input type="text" name="clg">
-                <br>
-                <label for="about">Languages known:</label>
-                <br>
-                <input type="text" name="lng">
-                <br><br>
-                <label for="experience">Experience in your field:</label>
-                <select name="year">
-                    <option>1 year</optione>
-                        <option>2 year</option>
-                        <option>3 year</option>
-                        <option>4+ years</option>
-                    </select>
-                <br>
-                <label for="skills">Enter your skills:</label>
-                <br>
-                <input type="text" autocomplete="off" name="skill1">
-                <input type="text" autocomplete="off" name="skill2">
-                <input type="text" autocomplete="off" name="skill3">
-                <input type="text" autocomplete="off" name="skill4">
-                <input type="text" autocomplete="off" name="skill5">
-                <br>
-                <label for="linkedin">linkedIn: </label><br>
-                <input type="url" name="linkedin">
-                <br>
-                <label for="linkedin">Github: </label><br>
-                <input type="url" name="github">
-                <br>
-                <label for="linkedin">Instagram: </label><br>
-                <input type="url" name="insta">
-                <br>
-                <label for="linkedin">Twitter: </label><br>
-                <input type="url" name="tweet">
-                <br>
-                <label for="about">About yourself:</label>
-                <br>
-                <textarea name="abt" cols="50" rows="5" maxlength="1000"></textarea>
-                <br>
-                <label for="image">Enter Image url: </label>
-                <input name="image" placeholder=" Enter image url">
-                <p>(First upload image to <a href="https://postimages.org" target="_blank">postimages.org</a> and then paste the link here, Image must be of 500X500 px)</p>
-                <button type="submit">Get Portfolio</button>
+            <div class="inputs">
+                <form action="/portfolio" method="post">
+                    <label for="username">Enter Username: </label>
+                    <br>
+                    <input type="text" name="uname">
+                    <br>
+                    <label for="name">Enter First name: </label>
+                    <br>
+                    <input type="text" name="first">
+                    <br>
+                    <label for="name">Enter Last name: </label>
+                    <br>
+                    <input type="text" name="last">
+                    <br>
+                    <label for="email">Enter Email: </label>
+                    <br>
+                    <input type="email" name="email">
+                    <br>
+                    <label for="college">Enter College name:</label>
+                    <br>
+                    <input type="text" name="clg">
+                    <br>
+                    <label for="about">Languages known:</label>
+                    <br>
+                    <input type="text" name="lng">
+                    <br><br>
+                    <label for="experience">Experience in your field:</label>
+                    <select name="year">
+                        <option>1 year</optione>
+                            <option>2 year</option>
+                            <option>3 year</option>
+                            <option>4+ years</option>
+                        </select>
+                    <br>
+                    <label for="skills">Enter your skills:</label>
+                    <br>
+                    <input type="text" autocomplete="off" name="skill1">
+                    <input type="text" autocomplete="off" name="skill2">
+                    <input type="text" autocomplete="off" name="skill3">
+                    <input type="text" autocomplete="off" name="skill4">
+                    <input type="text" autocomplete="off" name="skill5">
+                    <br>
+                    <label for="linkedin">linkedIn: </label><br>
+                    <input type="url" name="linkedin">
+                    <br>
+                    <label for="linkedin">Github: </label><br>
+                    <input type="url" name="github">
+                    <br>
+                    <label for="linkedin">Instagram: </label><br>
+                    <input type="url" name="insta">
+                    <br>
+                    <label for="linkedin">Twitter: </label><br>
+                    <input type="url" name="tweet">
+                    <br>
+                    <label for="about">About yourself:</label>
+                    <br>
+                    <textarea name="abt" cols="50" rows="3" maxlength="1000"></textarea>
+                    <br>
+                    <label for="image">Enter Image url: </label>
+                    <input name="image" placeholder=" Enter image url">
+                    <p>(First upload image to <a href="https://postimages.org" target="_blank">postimages.org</a> and then paste the link here, Image must be of 500X500 px)</p>
+                    <button type="submit">Get Portfolio</button>
                 </form>
             </div>
         </div>
-        <footer>
-            <p>Made with ❤️ by <span> <a href="https://github.com/muskaann129" target="_blank">Muskan Gyanani</a></span></p>
-        </footer>
+    </div>
+<footer>
+    <p>Made with ❤️ by <span> <a href="https://github.com/muskaann129" target="_blank">Muskan Gyanani</a></span></p>
+</footer>
 </body>
 {% if data.alert %}
 <script>

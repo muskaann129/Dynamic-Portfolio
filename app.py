@@ -20,7 +20,8 @@ def admin():
         return render_template("admin.html", data={"success":False,"alert": True,"reason":"Username Already exists"})
     except:
           pass
-    name = request.form.get("name")
+    first = request.form.get("first")
+    last = request.form.get("last")
     email = request.form.get("email")
     college = request.form.get("clg")
     language = request.form.get("lng")
@@ -39,7 +40,8 @@ def admin():
 
 
     user_data[username] = {"username": username,
-                                "name": name,
+                                "first": first,
+                                "last": last,
                                 "email":email,
                                 "college": college,
                                 "lang": language,

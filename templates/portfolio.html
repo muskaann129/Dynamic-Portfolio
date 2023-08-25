@@ -33,16 +33,15 @@
 /* Introduction page */
 
 .home{
-    min-height: 100vh;
+    /* min-height: 100vh; */
     width: 100%;
-    background: #022C43;
     display: flex;
 }
 
 .sidebar{
     background-color: #115173;
     height: 100vh;
-    width: 200px;
+    width: 15%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,21 +65,22 @@
 }
 
 .intro{
-    position: relative;
+    width: 85%;
     text-align: center;
     display: flex;
     align-items:center;
     justify-content: center;
     flex-direction: column;
-    margin-left: 220px;
+    padding: 20px;
     color: rgb(241, 241, 241);
+    background: #022C43;
 }
 
-.typewriter h1 {
+h1 {
     font-size: 60px;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: .15em solid orange; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
+    white-space: nowrap;/* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .15em; /* Adjust as needed */
     animation:  
@@ -95,7 +95,7 @@
         width: 0px;
     }
     50%,100%{
-        width: 100%;
+        width: 80%;
     }
 }
 
@@ -106,6 +106,7 @@
 }
 
 .intro .img img{
+    border: 2px solid yellow;
     height: 11em;
     width: 13em;
     margin: 30px 0px 10px 0px;
@@ -166,14 +167,14 @@
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    height: 50vh;
-    width: 70vw;
+    height: 70%;
+    width: 70%;
     background: #ffffff2b;
     border-radius: 30px;
     /* border: 2px solid yellow; */
 }
 
-.box h1{
+.box h2{
     margin-top: -20px;
     font-size: 50px;
     color: rgb(237, 237, 237);
@@ -198,7 +199,7 @@
     flex-direction: column;
 }
 
-.skills h1{
+.skills h2{
     font-size: 60px;
     color:#FFD700;
     margin: 20px 0px;
@@ -281,15 +282,74 @@ footer{
         padding-top: 8px;
         background-color: #022C43;
     }
-    footer p{
-        font-size: 14px;
-        font-weight: bold;
-        color: white;
+footer p{
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+footer p a{
+    color: yellow;
+    text-decoration: none;
+}
+
+/* responsive */
+
+@media only screen and (max-width: 1206px) {
+    h1{
+        font-size: 40px;
     }
-    footer p a{
-        color: yellow;
-        text-decoration: none;
+}
+@media only screen and (max-width: 822px) {
+    .card{
+        width: 100%;
     }
+}
+@media only screen and (max-width: 781px) {
+    h1{
+        white-space:pre-line;
+
+    }
+    .box h2,.skills h2{
+        font-size: 35px;
+    }
+    .home{
+        flex-direction: column;
+    }
+    .sidebar{
+        height: 8vh;
+        width: 100%;
+        flex-direction: row;
+        gap: 30px;
+    }
+    .intro{
+        width: 100%;
+    }
+    .card {
+        flex-direction: column;
+    }
+    .card p span {
+        transform: rotate(0);
+        font-size: 24px;
+    }
+    .about .box{
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 367px) {
+    .contact{
+        height: 60vh;
+    }
+    .sidebar{
+        gap: 8px;
+    }
+    .box h2{
+        font-size: 28px;
+    }
+    .card p span {
+        font-size: 20px;
+    }
+}
+
 </style>
 <body>
     <section class="home">
@@ -301,28 +361,26 @@ footer{
             <h4><a href="#contact">Contact</a></h4>
         </div>
         <div class="intro">
-            <div class="typewriter">
-                <h1>Hey! I'm <span style="color:yellow;">{{data.name}}</span></h1>
-            </div>
+            <h1>Hey! I'm <span style="color:yellow;">Muskan</span></h1>
             <div class="img"><img src='{{ data.image }}'/></div>
             <h4>College - <span style="color:yellow;">{{data.college}}</span></h4>
             <h4>Email - <span style="color:yellow;">{{data.email}}</span></h4>
             <h4>Experience - <span style="color:yellow;">{{data.expe}}</span></h4>
-            <p>Welcome to my portfolio,  I hope my portfolio will provide you <br> with insight into my skills and potential as I begin my journey in this industry.</p>
+            <p>Hello! My name is <span style="color:yellow;">{{data.first}} {{data.last}}</span>. Welcome to my portfolio,  I hope my portfolio will provide you <br> with insight into my skills and potential as I begin my journey in this industry.</p>
         </div>
     </section>
 
 
     <section class="about" id="about">
         <div class="box">
-            <h1> < About Me/> </h1>
+            <h2> < About Me/> </h2>
             <p>{{data.about}}</p>
         </div>
     </section>
 
 
     <section class="skills" id="skills">
-        <h1>Skills</h1>
+        <h2>Skills</h2>
         <div class="card">
             <p><span>{{ data.skill[0] }}</span></p>
             <p><span>{{ data.skill[1] }}</span></p>
